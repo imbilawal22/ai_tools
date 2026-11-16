@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindora AI — Evolving AI Tools Hub (Empty Slate)</title>
+  
+  <meta name="description" content="Mindora AI is a clean, interactive hub designed for organizing and tracking the evolving tools of Artificial Intelligence.">
+  <meta name="keywords" content="Mindora AI, AI Tools, Clean Slate, AI Framework, Machine Intelligence">
+  <meta name="author" content="Mindora AI">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Ambient Glow & Neural Network Canvas -->
+  <canvas id="neuralCanvas"></canvas>
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="logo-orb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+            <path d="M12 12 2.1 7.1"></path>
+            <path d="M12 12v10"></path>
+          </svg>
+        </div>
+        <div>
+          <span class="logo-text">Mindora<span style="color: var(--accent-cyan);">.AI</span></span>
+        </div>
+        <span class="logo-tag">Clean State</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="active">Overview</a></li>
+          <li><a href="#tools">Tool Registry</a></li>
+          <li><a href="#blueprint">Architecture Blueprint</a></li>
+          <li><a href="#horizons">Evolving Horizons</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="live-indicator">
+          <span class="pulse-dot"></span>
+          <span id="navToolCount">0 Tools in Database</span>
+        </div>
+        <button id="navAddToolBtn" class="btn btn-primary nav-cta">+ Add AI Tool</button>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-pill">
+          <span>⚡</span>
+          <span>Clean State • Ready for Evolving AI Tools</span>
+        </div>
+
+        <h1 class="hero-title">
+          The Clean Slate Hub for <span class="gradient-text">Evolving AI Tools</span>
+        </h1>
+
+        <p class="hero-sub">
+          Mindora AI is an empty, high-performance canvas engineered to catalog, benchmark, 
+          and organize the next generation of artificial intelligence tools as they emerge.
+        </p>
+
+        <div class="hero-cta-group">
+          <button id="heroAddToolBtn" class="btn btn-primary">
+            + Register First AI Tool
+          </button>
+          <a href="#tools" class="btn btn-outline">
+            View Empty Registry
+          </a>
+        </div>
+
+        <!-- Telemetry Stats Strip (Empty State) -->
+        <div class="hero-stats-strip">
+          <div class="stat-item">
+            <span class="stat-value" id="statToolsCount">0</span>
+            <span class="stat-label">Total Tools Registered</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">6</span>
+            <span class="stat-label">Architectural Categories</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">Clean</span>
+            <span class="stat-label">Database Status</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">Ready</span>
+            <span class="stat-label">Inference Telemetry</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Empty AI Tool Registry / Radar -->
+    <section id="tools" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Evolving Intelligence Directory</span>
+          <h2 class="section-title">Frontier Tool Registry</h2>
+          <p class="section-desc">
+            The database is currently empty. Use the control bar below to search, filter, or populate your curated list of AI tools.
+          </p>
+        </div>
+
+        <!-- Control Bar -->
+        <div class="tools-control-bar">
+          <div class="search-row">
+            <div class="search-input-wrapper">
+              <span class="search-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <input 
+                type="text" 
+                id="toolSearch" 
+                class="search-input" 
+                placeholder="Search tools by name, category, or provider..."
+              >
+            </div>
+
+            <select id="toolSort" class="sort-select">
+              <option value="name">Sort: Name (A-Z)</option>
+              <option value="reasoning">Sort: Reasoning Benchmark</option>
+              <option value="coding">Sort: Coding Benchmark</option>
+            </select>
+
+            <button id="controlBarAddBtn" class="btn btn-primary" style="white-space: nowrap;">
+              + Add Tool
+            </button>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="filter-pills">
+            <button class="filter-btn active" data-category="all">All (0)</button>
+            <button class="filter-btn" data-category="reasoning">Reasoning & Frontier</button>
+            <button class="filter-btn" data-category="coding">Agentic Engineering</button>
+            <button class="filter-btn" data-category="creative">Generative Vision & Video</button>
+            <button class="filter-btn" data-category="voice">Voice & Multimodal</button>
+            <button class="filter-btn" data-category="research">Research & Knowledge</button>
+            <button class="filter-btn" data-category="opensource">Open Source & Local</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Tools Grid (Shows Empty State initially) -->
+        <div id="toolsGrid" class="tools-grid">
+          <!-- Populated by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Architecture Blueprint (Clean Modular Framework) -->
+    <section id="blueprint" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Modular Architecture</span>
+          <h2 class="section-title">Evolving AI Stack Blueprint</h2>
+          <p class="section-desc">
+            The foundational layers of modern AI applications waiting for your selected toolchain.
+          </p>
+        </div>
+
+        <div class="matcher-container">
+          <div class="result-stack-grid" style="margin-bottom: 0;">
+            <div class="stack-card">
+              <span class="stack-badge">Layer 1 • Cognitive Core</span>
+              <div class="stack-name">Reasoning & Foundation Layer</div>
+              <div class="stack-role">
+                The primary intelligence engine responsible for deep logical inference, context memory, and synthesis.
+              </div>
+              <div style="margin-top: 14px; font-size: 0.8rem; color: var(--accent-cyan);">
+                Status: Awaiting Tool Assignment
+              </div>
+            </div>
+
+            <div class="stack-card">
+              <span class="stack-badge">Layer 2 • Multi-Modal & Sensory</span>
+              <div class="stack-name">Perception & Generation Layer</div>
+              <div class="stack-role">
+                Handles real-time speech prosody, vision comprehension, image diffusion, and continuous streaming media.
+              </div>
+              <div style="margin-top: 14px; font-size: 0.8rem; color: var(--accent-purple);">
+                Status: Awaiting Tool Assignment
+              </div>
+            </div>
+
+            <div class="stack-card">
+              <span class="stack-badge">Layer 3 • Agentic Sandbox</span>
+              <div class="stack-name">Action & Execution Runtime</div>
+              <div class="stack-role">
+                Sandboxed environments for autonomous tool calling, terminal access, multi-file code editing, and verification.
+              </div>
+              <div style="margin-top: 14px; font-size: 0.8rem; color: var(--accent-emerald);">
+                Status: Awaiting Tool Assignment
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Emerging Horizons in AI -->
+    <section id="horizons" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Future Vectors</span>
+          <h2 class="section-title">Emerging Horizons in AI</h2>
+          <p class="section-desc">
+            Key architectural paradigms shaping the next generation of artificial intelligence tools.
+          </p>
+        </div>
+
+        <div class="horizons-grid">
+          <div class="horizon-card">
+            <div class="horizon-icon">🧠</div>
+            <h3 class="horizon-title">Test-Time Compute & Pure RL</h3>
+            <p class="horizon-text">
+              The shift from scaling pre-training compute to scaling inference-time deliberation. Models spend dynamic tokens exploring alternative reasoning paths and self-correcting errors before emitting their final answers.
+            </p>
+          </div>
+
+          <div class="horizon-card">
+            <div class="horizon-icon">🌐</div>
+            <h3 class="horizon-title">Autonomous Multi-Agent Networks</h3>
+            <p class="horizon-text">
+              Specialized collaborative AI swarms operating over shared persistent workspaces—separating planning, implementation, verification, and security into distinct autonomous agent roles.
+            </p>
+          </div>
+
+          <div class="horizon-card">
+            <div class="horizon-icon">⚡</div>
+            <h3 class="horizon-title">On-Device Sovereign SLMs</h3>
+            <p class="horizon-text">
+              High-efficiency Small Language Models running with hardware quantization on edge devices, unlocking zero-latency response, air-gapped data sovereignty, and zero cloud operating cost.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating Tool Comparison Drawer -->
+  <aside id="compareDrawer" class="compare-drawer">
+    <span style="font-weight: 700; font-size: 0.88rem;">Compare (<span id="compareCount" style="color: var(--accent-cyan);">0/3</span>):</span>
+    <div id="compareChips" class="compare-chips"></div>
+    <div style="display: flex; gap: 8px;">
+      <button id="openCompareBtn" class="btn btn-primary" style="padding: 7px 16px; font-size: 0.82rem;">
+        View Matrix ↗
+      </button>
+      <button id="clearCompareBtn" class="btn btn-outline" style="padding: 7px 12px; font-size: 0.82rem;">
+        Clear
+      </button>
+    </div>
+  </aside>
+
+  <!-- Modal 1: Details & Specs Inspector -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal-content">
+      <button id="modalCloseBtn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Add New AI Tool Modal -->
+  <div id="addToolModalOverlay" class="modal-overlay">
+    <div class="modal-content" style="max-width: 600px;">
+      <button id="addToolCloseBtn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-header-meta">
+        <span class="tool-badge frontier">New Entry</span>
+        <span style="font-size: 0.82rem; color: var(--text-dim);">Mindora AI Registry</span>
+      </div>
+      <h2 style="font-size: 1.8rem; margin-bottom: 8px;">Register New AI Tool</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">
+        Add an evolving AI tool, foundation model, or agent to your database.
+      </p>
+
+      <form id="addToolForm">
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">
+            Tool Name *
+          </label>
+          <input type="text" id="inputToolName" class="search-input" placeholder="e.g. DeepSeek R1, Claude 3.7, Cursor" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;">
+          <div>
+            <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">
+              Category *
+            </label>
+            <select id="inputToolCategory" class="sort-select" style="width: 100%;" required>
+              <option value="reasoning">Reasoning & Frontier</option>
+              <option value="coding">Agentic Engineering</option>
+              <option value="creative">Generative Vision & Video</option>
+              <option value="voice">Voice & Multimodal</option>
+              <option value="research">Research & Knowledge</option>
+              <option value="opensource">Open Source & Local</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">
+              Provider / Lab *
+            </label>
+            <input type="text" id="inputToolProvider" class="search-input" placeholder="e.g. OpenAI, DeepMind, Anthropic" required>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">
+            Short Tagline / Capability *
+          </label>
+          <input type="text" id="inputToolTagline" class="search-input" placeholder="e.g. Hybrid test-time reasoning model for complex code" required>
+        </div>
+
+        <div style="margin-bottom: 16px;">
+          <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">
+            Modalities (comma separated)
+          </label>
+          <input type="text" id="inputToolModalities" class="search-input" placeholder="e.g. Text, Code, Vision, Audio">
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px;">
+          <div>
+            <label style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">
+              <span>Reasoning Score</span>
+              <span id="labelReasoningScore" style="color: var(--accent-cyan);">90%</span>
+            </label>
+            <input type="range" id="inputToolReasoning" min="1" max="100" value="90" style="width: 100%; accent-color: var(--accent-cyan);">
+          </div>
+          <div>
+            <label style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">
+              <span>Coding Score</span>
+              <span id="labelCodingScore" style="color: var(--accent-purple);">90%</span>
+            </label>
+            <input type="range" id="inputToolCoding" min="1" max="100" value="90" style="width: 100%; accent-color: var(--accent-purple);">
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px;">
+          <button type="button" id="btnCancelAddTool" class="btn btn-outline">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save to Registry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="#hero" class="brand-logo" style="margin-bottom: 12px;">
+            <div class="logo-orb">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                <path d="M12 12 2.1 7.1"></path>
+                <path d="M12 12v10"></path>
+              </svg>
+            </div>
+            <span class="logo-text">Mindora<span style="color: var(--accent-cyan);">.AI</span></span>
+          </a>
+          <p class="footer-desc">
+            An empty, modular hub tracking the evolving landscape of artificial intelligence tools and autonomous systems.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Registry</h4>
+          <ul class="footer-links">
+            <li><a href="#tools">Browse Registry</a></li>
+            <li><a href="#hero">Overview</a></li>
+            <li><a href="#blueprint">Architecture Blueprint</a></li>
+            <li><a href="#horizons">Next Horizons</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Actions</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" id="footerAddToolLink">+ Add New AI Tool</a></li>
+            <li><a href="javascript:void(0)" id="footerClearToolsLink">Reset Registry</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Stay Informed</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 8px;">
+            Get updates on new architectural paradigms and AI tool releases.
+          </p>
+          <form id="newsletterForm" class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary" style="padding: 9px 15px;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Mindora AI Hub. Empty Starter Template.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#" style="color: var(--text-dim); text-decoration: none;">Privacy Policy</a>
+          <a href="#" style="color: var(--text-dim); text-decoration: none;">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
