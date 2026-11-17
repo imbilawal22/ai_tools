@@ -1,38 +1,56 @@
-# Mindora AI — Evolving AI Tools Hub (Clean Slate)
+# Mindora AI — Evolving AI Tools Hub & Automated Pipeline
 
-An attractive, clean-slate website dedicated to tracking and organizing the evolving tools of Artificial Intelligence.
-
----
-
-## 🌟 Overview
-
-Mindora AI is configured in **Clean State** mode:
-- **0 Preloaded Tools**: All tool entries have been removed.
-- **Empty Registry Display**: Sleek, futuristic empty state canvas with live telemetry indicators showing `0 Tools in Database`.
-- **Interactive Tool Registration**: Users can register new AI tools via the dynamic `+ Add Tool` modal with custom categories, benchmarks, and modalities.
-- **Side-by-Side Comparison**: Automatically activates when tools are registered and selected for comparison.
-- **Modular Architecture Blueprint**: Conceptual layers (Reasoning, Multimodal, Agentic Sandbox) ready for tool integration.
-- **Interactive Neural Canvas Background**: HTML5 canvas rendering interconnected cybernetic particle nodes with mouse interaction physics.
+An attractive, interactive web platform tracking, cataloging, and benchmarking the evolving landscape of Artificial Intelligence tools around the globe.
 
 ---
 
-## 📁 Project Structure
+## ⚡ Automated AI Research & Deployment Pipeline
+
+Mindora AI features an automated GitHub Actions pipeline that performs global AI research and updates the tool registry twice daily:
+
+- **Schedule**: Every day at **9:00 AM PKT** and **6:00 PM PKT** (Pakistan Standard Time, UTC+5).
+  - *Cron equivalent*: `0 4,13 * * *` (04:00 UTC and 13:00 UTC)
+- **Intelligence Engine**: Google Gemini API (`gemini-3.1-flash-lite`, `gemini-3.8-flash`, etc.) with multi-model fallback.
+- **Global Scope**: Discovers and indexes evolving AI tools across reasoning models, agentic coding tools, creative video & image generators, real-time voice, research engines, and open-source local inference stacks.
+- **Auto-Publish & Deploy**: Automatically commits newly cataloged tools to the `main` branch and deploys the live site to GitHub Pages.
+
+---
+
+## 🚀 Manual Workflow Trigger
+
+You can also run the research cycle manually anytime:
+1. Navigate to [GitHub Actions](https://github.com/ittrackinstitute0-lgtm/mindora-AI-/actions).
+2. Select **Mindora AI - Automated Evolving AI Tools Pipeline**.
+3. Click **Run workflow** -> **Branch: main** -> **Run workflow**.
+
+---
+
+## 🔐 Configuring GitHub Secret (Recommended)
+
+To securely manage your Gemini API key in GitHub:
+1. Go to repository **Settings** -> **Secrets and variables** -> **Actions**.
+2. Click **New repository secret**.
+3. Name: `GEMINI_API_KEY`
+4. Value: Paste your Gemini API key.
+5. Click **Add secret**.
+
+---
+
+## 📁 Repository Structure
 
 ```
-c:\Users\Admin\Desktop\AI TOOLS\
-├── index.html          # Main HTML5 entry point & clean slate structure
+.
+├── .github/
+│   └── workflows/
+│       └── update-ai-tools.yml   # Daily 9:00 AM & 6:00 PM PKT automation & deployment
+├── scripts/
+│   └── fetch_ai_tools.py        # Gemini-powered global research probe & data merger
+├── index.html                   # Responsive frontend interface
 ├── css/
-│   └── style.css       # Custom dark cybernetic theme, glassmorphism & responsive layout
+│   └── style.css                # Dark cybernetic theme & animations
 ├── js/
-│   ├── data.js         # Clean dataset (AI_TOOLS_DATA = [])
-│   └── script.js       # Neural canvas, empty state handling, modal & registration logic
-└── assets/             # Assets directory
+│   ├── data.js                  # Dynamic AI tools registry
+│   └── script.js                # Neural canvas, live filtering, comparison & inspector
+├── README.md                    # Documentation
+└── .gitignore                   # Ignored files
 ```
-
----
-
-## 🚀 How to Open
-
-Open `index.html` directly in your web browser:
-- Double-click `index.html`, or
-- Open in Google Chrome / Microsoft Edge.
