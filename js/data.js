@@ -1,100 +1,501 @@
-// Mindora AI - Evolving AI Tools Ecosystem Dataset
-// Automatically updated via Mindora AI Research Pipeline powered by Gemini API
-// Total Tools Cataloged: 8
+// Mindora AI - Global Verified Evolving AI Tools Dataset
+// Every entry links directly to the real, live official web application.
+// Automatically researched & verified via Mindora AI Pipeline (9:00 AM & 6:00 PM PKT)
+// Total Verified Live Apps: 23
 
 let AI_TOOLS_DATA = [
   {
-    "id": "deepseek-r1",
-    "name": "DeepSeek R1",
+    "id": "chatgpt",
+    "name": "ChatGPT",
     "category": "reasoning",
-    "provider": "DeepSeek",
-    "badge": "Frontier",
+    "provider": "OpenAI",
+    "badge": "Frontier Chat",
     "badgeType": "frontier",
-    "tagline": "A massive leap in open-weights reasoning performance rivaling top-tier proprietary models.",
-    "description": "DeepSeek R1 utilizes a large-scale reinforcement learning approach to achieve advanced chain-of-thought reasoning without extensive supervised fine-tuning. It demonstrates exceptional capabilities in complex mathematical problem solving and logical deduction, setting a new benchmark for open-weights efficiency.",
-    "releaseYear": "2025",
-    "contextWindow": "128k Tokens",
-    "openSource": true,
-    "pricing": "Open Weights / API",
+    "tagline": "OpenAI's flagship conversational AI for reasoning, writing, coding, voice, vision, and deep web research.",
+    "description": "ChatGPT brings OpenAI's frontier reasoning and omni-modal models into a single interactive workspace. Use it for complex problem solving, real-time voice conversations, data analysis, image generation, coding, and custom GPT workflows.",
+    "releaseYear": "2022-2026",
+    "contextWindow": "128k - 200k Tokens",
+    "openSource": false,
+    "pricing": "Free / Plus / Pro",
     "modalities": [
       "Text",
-      "Code"
+      "Voice",
+      "Vision",
+      "Code",
+      "Web Search"
     ],
     "metrics": {
       "reasoning": 98,
-      "speed": 85,
-      "costEfficiency": 95,
-      "coding": 92
+      "speed": 95,
+      "costEfficiency": 88,
+      "coding": 96
     },
     "useCases": [
-      "Complex mathematical proofs",
-      "Logical reasoning tasks",
-      "Scientific research analysis"
+      "Everyday writing, brainstorming, and analysis",
+      "Real-time voice & visual multimodal assistance",
+      "Deep research, math, and full-stack coding"
     ],
-    "website": "https://www.deepseek.com",
+    "website": "https://chatgpt.com",
     "trending": true
   },
   {
-    "id": "claude-3-7-sonnet",
-    "name": "Claude 3.7 Sonnet",
+    "id": "notebooklm",
+    "name": "NotebookLM",
+    "category": "research",
+    "provider": "Google",
+    "badge": "Audio Overviews",
+    "badgeType": "frontier",
+    "tagline": "Google's source-grounded AI research workspace that turns PDFs, docs, and links into interactive notes and podcasts.",
+    "description": "NotebookLM grounds every answer strictly in the documents, PDFs, YouTube links, and notes you upload—eliminating hallucinations with inline citations. Its signature Audio Overview turns complex study material into engaging two-host audio discussions.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "50+ Sources / 25M Words",
+    "openSource": false,
+    "pricing": "Free / Google One AI",
+    "modalities": [
+      "PDF & Docs",
+      "Audio Podcasts",
+      "Text",
+      "Citations"
+    ],
+    "metrics": {
+      "reasoning": 93,
+      "speed": 88,
+      "costEfficiency": 100,
+      "coding": 72
+    },
+    "useCases": [
+      "Studying textbooks, lectures, and research papers",
+      "Generating podcast-style Audio Overviews from documents",
+      "Source-cited legal, business, and academic synthesis"
+    ],
+    "website": "https://notebooklm.google.com",
+    "trending": true
+  },
+  {
+    "id": "huggingface",
+    "name": "Hugging Face",
+    "category": "opensource",
+    "provider": "Hugging Face",
+    "badge": "Open AI Hub",
+    "badgeType": "open",
+    "tagline": "The global open-source AI platform hosting 1M+ models, datasets, and live interactive AI Spaces.",
+    "description": "Hugging Face is the central collaborative hub for the global open-source AI community. Explore, run, and deploy thousands of open-weight LLMs, image/video generators, audio models, datasets, and interactive Spaces right in your browser.",
+    "releaseYear": "2016-2026",
+    "contextWindow": "1M+ Open Models",
+    "openSource": true,
+    "pricing": "Free / Pro / Enterprise",
+    "modalities": [
+      "Models",
+      "Datasets",
+      "Interactive Spaces",
+      "APIs"
+    ],
+    "metrics": {
+      "reasoning": 94,
+      "speed": 91,
+      "costEfficiency": 100,
+      "coding": 95
+    },
+    "useCases": [
+      "Trying live open-source AI demos in Hugging Face Spaces",
+      "Downloading open weights like Llama, Qwen, DeepSeek, and FLUX",
+      "Training, benchmarking, and hosting custom AI models"
+    ],
+    "website": "https://huggingface.co",
+    "trending": true
+  },
+  {
+    "id": "google-gemini",
+    "name": "Google Gemini",
+    "category": "reasoning",
+    "provider": "Google DeepMind",
+    "badge": "2M+ Context",
+    "badgeType": "frontier",
+    "tagline": "Google DeepMind's natively multimodal AI assistant with massive context and deep Workspace integration.",
+    "description": "Google Gemini natively understands text, code, images, audio, and video across an industry-leading context window. Connect directly with Google Search, Docs, Drive, and YouTube for fast research, coding, and creative synthesis.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "2,000,000+ Tokens",
+    "openSource": false,
+    "pricing": "Free / Gemini Advanced",
+    "modalities": [
+      "Text",
+      "Vision",
+      "Video",
+      "Audio",
+      "Code"
+    ],
+    "metrics": {
+      "reasoning": 97,
+      "speed": 97,
+      "costEfficiency": 95,
+      "coding": 95
+    },
+    "useCases": [
+      "Analyzing long documents, videos, and full codebases",
+      "Live Google Workspace & Search-grounded research",
+      "Fast multimodal prototyping and coding"
+    ],
+    "website": "https://gemini.google.com",
+    "trending": true
+  },
+  {
+    "id": "claude",
+    "name": "Claude",
     "category": "reasoning",
     "provider": "Anthropic",
-    "badge": "Frontier",
+    "badge": "Hybrid Reasoning",
     "badgeType": "frontier",
-    "tagline": "The first hybrid reasoning model capable of toggling between instant and extended thinking.",
-    "description": "Claude 3.7 Sonnet introduces a breakthrough 'extended thinking' mode that allows the model to deliberate on complex tasks before responding. It provides unparalleled nuance and accuracy in high-stakes reasoning while maintaining the speed of a standard LLM for simpler queries.",
-    "releaseYear": "2025",
+    "tagline": "Anthropic's thoughtful AI assistant prized for nuanced writing, interactive Artifacts, and frontier coding.",
+    "description": "Claude blends instant responsiveness with deep extended thinking, delivering industry-leading software engineering, clear natural prose, and live interactive Artifacts that render React apps, diagrams, and documents side-by-side.",
+    "releaseYear": "2023-2026",
     "contextWindow": "200k Tokens",
     "openSource": false,
-    "pricing": "Commercial API / Subscription",
+    "pricing": "Free / Pro / Team",
     "modalities": [
       "Text",
       "Code",
-      "Vision"
+      "Vision",
+      "Artifacts"
     ],
     "metrics": {
       "reasoning": 99,
-      "speed": 90,
-      "costEfficiency": 80,
-      "coding": 97
+      "speed": 92,
+      "costEfficiency": 86,
+      "coding": 99
     },
     "useCases": [
-      "Strategic planning",
-      "Advanced coding architecture",
-      "Legal document analysis"
+      "Complex software architecture & multi-file coding",
+      "Building interactive web previews via Artifacts",
+      "Long-form writing, editing, and document review"
     ],
-    "website": "https://www.anthropic.com",
+    "website": "https://claude.ai",
+    "trending": true
+  },
+  {
+    "id": "deepseek-chat",
+    "name": "DeepSeek",
+    "category": "reasoning",
+    "provider": "DeepSeek AI",
+    "badge": "Open Reasoning",
+    "badgeType": "open",
+    "tagline": "High-efficiency open-weights reasoning and chat assistant rivaling top proprietary frontier models.",
+    "description": "DeepSeek Chat gives direct web access to DeepSeek's breakthrough reasoning and language models trained via large-scale reinforcement learning. Ideal for step-by-step math, formal logic, algorithms, and coding at unmatched accessibility.",
+    "releaseYear": "2025-2026",
+    "contextWindow": "128k Tokens",
+    "openSource": true,
+    "pricing": "Free Web App / Low-Cost API",
+    "modalities": [
+      "Text",
+      "Code",
+      "DeepThink",
+      "Web Search"
+    ],
+    "metrics": {
+      "reasoning": 98,
+      "speed": 88,
+      "costEfficiency": 99,
+      "coding": 96
+    },
+    "useCases": [
+      "Step-by-step mathematical & scientific reasoning",
+      "Algorithm design, debugging, and competitive coding",
+      "Open-weights research and efficient inference"
+    ],
+    "website": "https://chat.deepseek.com",
+    "trending": true
+  },
+  {
+    "id": "perplexity-ai",
+    "name": "Perplexity AI",
+    "category": "research",
+    "provider": "Perplexity",
+    "badge": "Answer Engine",
+    "badgeType": "frontier",
+    "tagline": "Real-time AI answer engine replacing link lists with live web synthesis and clickable citations.",
+    "description": "Perplexity searches the live web, academic papers, and news in real time, synthesizing clear, structured answers backed by verifiable inline source citations and Deep Research multi-step reports.",
+    "releaseYear": "2023-2026",
+    "contextWindow": "Live Web Search",
+    "openSource": false,
+    "pricing": "Free / Pro ($20/mo)",
+    "modalities": [
+      "Live Search",
+      "Deep Research",
+      "Citations",
+      "Text"
+    ],
+    "metrics": {
+      "reasoning": 94,
+      "speed": 96,
+      "costEfficiency": 93,
+      "coding": 86
+    },
+    "useCases": [
+      "Instant fact-checked answers with live web sources",
+      "Deep market, tech, and academic literature research",
+      "Comparing products, news, and technical documentation"
+    ],
+    "website": "https://www.perplexity.ai",
+    "trending": true
+  },
+  {
+    "id": "grok",
+    "name": "Grok",
+    "category": "reasoning",
+    "provider": "xAI",
+    "badge": "Real-Time Intel",
+    "badgeType": "frontier",
+    "tagline": "xAI's real-time conversational AI with live web awareness, DeepSearch, and image generation.",
+    "description": "Grok combines frontier reasoning with real-time awareness of global news and trends. It supports multi-step Think mode, DeepSearch synthesis, coding assistance, and photorealistic image generation.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "128k+ Tokens",
+    "openSource": false,
+    "pricing": "Free Tier / SuperGrok / X Premium",
+    "modalities": [
+      "Text",
+      "Real-Time Web",
+      "Image",
+      "Code"
+    ],
+    "metrics": {
+      "reasoning": 95,
+      "speed": 94,
+      "costEfficiency": 88,
+      "coding": 92
+    },
+    "useCases": [
+      "Tracking breaking global news and live trends",
+      "DeepSearch technical and market queries",
+      "Fast brainstorming, coding, and visual generation"
+    ],
+    "website": "https://grok.com",
     "trending": true
   },
   {
     "id": "cursor",
     "name": "Cursor",
     "category": "coding",
-    "provider": "Cursor AI",
-    "badge": "Agentic",
+    "provider": "Anysphere",
+    "badge": "Agentic IDE",
     "badgeType": "agentic",
-    "tagline": "The AI-native code editor that treats your entire codebase as context.",
-    "description": "Cursor integrates frontier models directly into the IDE, enabling 'Composer' mode to write, edit, and refactor entire files simultaneously. It leverages deep codebase indexing to provide context-aware suggestions that far exceed standard autocomplete tools.",
-    "releaseYear": "2024",
-    "contextWindow": "1M Tokens",
+    "tagline": "The AI-native code editor built for multi-file agentic editing across your entire codebase.",
+    "description": "Cursor indexes your entire repository so AI agents can plan, edit multiple files, run terminal commands, and fix bugs automatically while predicting your next edits in real time.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Full Codebase Index",
     "openSource": false,
-    "pricing": "Free Tier / Subscription",
+    "pricing": "Free Tier / Pro ($20/mo)",
     "modalities": [
       "Code",
-      "Text"
+      "Agent Mode",
+      "Terminal",
+      "Git"
     ],
     "metrics": {
-      "reasoning": 90,
-      "speed": 95,
-      "costEfficiency": 85,
+      "reasoning": 93,
+      "speed": 97,
+      "costEfficiency": 91,
       "coding": 100
     },
     "useCases": [
-      "Full-stack application development",
-      "Codebase refactoring",
-      "Debugging complex systems"
+      "Full-stack software engineering with AI agents",
+      "Automated multi-file refactors and bug fixes",
+      "Navigating and understanding large unfamiliar repositories"
     ],
     "website": "https://cursor.com",
+    "trending": true
+  },
+  {
+    "id": "bolt-new",
+    "name": "Bolt.new",
+    "category": "coding",
+    "provider": "StackBlitz",
+    "badge": "Prompt-to-App",
+    "badgeType": "agentic",
+    "tagline": "Prompt, build, run, and deploy full-stack web applications directly inside your browser.",
+    "description": "Powered by WebContainers, Bolt.new lets you describe an app in plain language and watch AI install packages, write frontend and backend code, preview live, and deploy to production without local setup.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Full Browser Sandbox",
+    "openSource": false,
+    "pricing": "Free Tier / Pro",
+    "modalities": [
+      "Web Apps",
+      "Code",
+      "Live Preview",
+      "Deploy"
+    ],
+    "metrics": {
+      "reasoning": 89,
+      "speed": 96,
+      "costEfficiency": 90,
+      "coding": 96
+    },
+    "useCases": [
+      "Building complete web apps from a single prompt",
+      "Rapid startup MVP prototyping in the browser",
+      "One-click hosting and live deployment"
+    ],
+    "website": "https://bolt.new",
+    "trending": true
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "category": "coding",
+    "provider": "Lovable",
+    "badge": "AI App Builder",
+    "badgeType": "agentic",
+    "tagline": "Turn natural language prompts into polished, production-ready full-stack web apps.",
+    "description": "Lovable bridges design and engineering by generating clean React/Tailwind interfaces integrated seamlessly with databases, authentication, and GitHub sync—empowering founders and developers to ship 20x faster.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Project-Wide Sync",
+    "openSource": false,
+    "pricing": "Free Tier / Subscription",
+    "modalities": [
+      "UI Design",
+      "Full-Stack Code",
+      "GitHub Sync"
+    ],
+    "metrics": {
+      "reasoning": 88,
+      "speed": 95,
+      "costEfficiency": 89,
+      "coding": 95
+    },
+    "useCases": [
+      "Launching SaaS products and landing pages rapidly",
+      "Syncing AI-generated code cleanly to GitHub",
+      "Connecting backend databases without boilerplate"
+    ],
+    "website": "https://lovable.dev",
+    "trending": true
+  },
+  {
+    "id": "v0-dev",
+    "name": "v0 by Vercel",
+    "category": "coding",
+    "provider": "Vercel",
+    "badge": "UI Generator",
+    "badgeType": "agentic",
+    "tagline": "Generative UI and full-stack Next.js builder crafting clean, responsive web interfaces from text.",
+    "description": "Built by Vercel, v0 turns prompts, screenshots, and Figma ideas into production-ready React, Tailwind CSS, and shadcn/ui components with live preview and instant Vercel deployment.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Interactive UI Canvas",
+    "openSource": false,
+    "pricing": "Free Tier / Premium",
+    "modalities": [
+      "React UI",
+      "Tailwind",
+      "Image-to-Code"
+    ],
+    "metrics": {
+      "reasoning": 87,
+      "speed": 96,
+      "costEfficiency": 92,
+      "coding": 95
+    },
+    "useCases": [
+      "Generating sleek dashboards and marketing sites",
+      "Converting design mockups into responsive code",
+      "Deploying Next.js prototypes directly to Vercel"
+    ],
+    "website": "https://v0.dev",
+    "trending": false
+  },
+  {
+    "id": "elevenlabs",
+    "name": "ElevenLabs",
+    "category": "voice",
+    "provider": "ElevenLabs",
+    "badge": "Realtime Voice",
+    "badgeType": "voice",
+    "tagline": "Lifelike AI voice synthesis, dubbing, sound effects, and low-latency conversational voice agents.",
+    "description": "ElevenLabs leads generative audio with hyper-expressive speech across 30+ languages, instant voice cloning, studio sound effects, video dubbing, and real-time conversational AI agents.",
+    "releaseYear": "2023-2026",
+    "contextWindow": "Continuous Audio Stream",
+    "openSource": false,
+    "pricing": "Free Tier / Creator / Pro",
+    "modalities": [
+      "Speech",
+      "Voice Cloning",
+      "Dubbing",
+      "SFX"
+    ],
+    "metrics": {
+      "reasoning": 85,
+      "speed": 98,
+      "costEfficiency": 89,
+      "coding": 70
+    },
+    "useCases": [
+      "Studio-quality voiceovers for videos and podcasts",
+      "Multilingual AI dubbing preserving speaker emotion",
+      "Building real-time voice customer support agents"
+    ],
+    "website": "https://elevenlabs.io",
+    "trending": true
+  },
+  {
+    "id": "suno",
+    "name": "Suno",
+    "category": "creative",
+    "provider": "Suno",
+    "badge": "AI Music Studio",
+    "badgeType": "creative",
+    "tagline": "Create complete radio-quality songs with vocals, harmonies, and instruments from a text prompt.",
+    "description": "Suno transforms a short idea or custom lyrics into full-length, mastered tracks across any musical genre—complete with expressive vocals, realistic instrumentation, and stem controls.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "4+ Minute Full Songs",
+    "openSource": false,
+    "pricing": "Free Daily Credits / Pro",
+    "modalities": [
+      "Music",
+      "Vocals",
+      "Lyrics",
+      "Audio"
+    ],
+    "metrics": {
+      "reasoning": 78,
+      "speed": 94,
+      "costEfficiency": 92,
+      "coding": 55
+    },
+    "useCases": [
+      "Composing original background tracks for videos and games",
+      "Turning custom lyrics into full produced songs",
+      "Rapid musical prototyping and jingle creation"
+    ],
+    "website": "https://suno.com",
+    "trending": true
+  },
+  {
+    "id": "runway",
+    "name": "Runway",
+    "category": "creative",
+    "provider": "Runway",
+    "badge": "Video Engine",
+    "badgeType": "creative",
+    "tagline": "Cinematic AI video generation and creative VFX studio with camera, motion, and lighting control.",
+    "description": "Runway empowers filmmakers and creators with physics-aware text-to-video, image-to-video, Act-One performance capture, and precision camera controls directly inside a web-based creative suite.",
+    "releaseYear": "2023-2026",
+    "contextWindow": "HD / 4K Video Sequences",
+    "openSource": false,
+    "pricing": "Free Tier / Standard / Pro",
+    "modalities": [
+      "Text-to-Video",
+      "Image-to-Video",
+      "VFX"
+    ],
+    "metrics": {
+      "reasoning": 80,
+      "speed": 86,
+      "costEfficiency": 84,
+      "coding": 55
+    },
+    "useCases": [
+      "Directing cinematic AI short films and commercials",
+      "Animating still artwork with camera choreography",
+      "Automated rotoscoping, inpainting, and VFX workflows"
+    ],
+    "website": "https://app.runwayml.com",
     "trending": true
   },
   {
@@ -104,165 +505,261 @@ let AI_TOOLS_DATA = [
     "provider": "Kuaishou",
     "badge": "Video Engine",
     "badgeType": "creative",
-    "tagline": "High-fidelity, long-duration video generation with realistic physics.",
-    "description": "Kling AI utilizes a 3D spatiotemporal attention mechanism to generate videos up to 2 minutes long with consistent character movement and realistic physical interactions. It represents a significant advancement in temporal coherence for generative video models.",
-    "releaseYear": "2024",
-    "contextWindow": "Video Stream",
+    "tagline": "High-fidelity AI video and image generator famed for realistic human motion and physics.",
+    "description": "Kling AI uses advanced 3D spatiotemporal attention to produce fluid, realistic video clips with accurate physical motion, expressive faces, lip-sync, and cinematic lighting.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "1080p Cinematic Video",
     "openSource": false,
-    "pricing": "Freemium",
+    "pricing": "Free Daily Credits / Pro",
     "modalities": [
       "Video",
-      "Text"
+      "Image",
+      "Lip-Sync",
+      "Motion"
     ],
     "metrics": {
-      "reasoning": 70,
-      "speed": 75,
-      "costEfficiency": 80,
-      "coding": 60
+      "reasoning": 76,
+      "speed": 84,
+      "costEfficiency": 88,
+      "coding": 55
     },
     "useCases": [
-      "Cinematic content creation",
-      "Marketing video production",
-      "Storyboarding"
+      "Generating lifelike product and marketing videos",
+      "Animating storyboards with natural human kinematics",
+      "Creating high-resolution visual concepts"
     ],
     "website": "https://klingai.com",
     "trending": true
   },
   {
-    "id": "hume-evi-2",
-    "name": "Hume EVI 2",
-    "category": "voice",
-    "provider": "Hume AI",
-    "badge": "Realtime Voice",
-    "badgeType": "voice",
-    "tagline": "The first empathetic voice interface that understands vocal prosody and emotion.",
-    "description": "Hume EVI 2 uses a proprietary Empathic Voice Interface that analyzes the tone, pitch, and cadence of speech to interpret user intent beyond literal text. This allows for fluid, human-like conversations that adapt to the user's emotional state in real-time.",
-    "releaseYear": "2025",
-    "contextWindow": "Audio Stream",
+    "id": "gamma",
+    "name": "Gamma",
+    "category": "research",
+    "provider": "Gamma",
+    "badge": "AI Presentations",
+    "badgeType": "frontier",
+    "tagline": "Create polished presentations, documents, and webpages in seconds from notes or a single prompt.",
+    "description": "Gamma turns raw ideas, outlines, or uploaded documents into clean, visually cohesive slide decks and interactive web docs with automatic layout design, AI imagery, and instant sharing.",
+    "releaseYear": "2023-2026",
+    "contextWindow": "Multi-Slide Decks",
     "openSource": false,
-    "pricing": "Commercial API",
+    "pricing": "Free Tier / Plus / Pro",
     "modalities": [
-      "Audio",
-      "Text"
+      "Slides",
+      "Docs",
+      "Webpages",
+      "Design"
     ],
     "metrics": {
       "reasoning": 85,
-      "speed": 98,
-      "costEfficiency": 75,
+      "speed": 95,
+      "costEfficiency": 92,
       "coding": 65
     },
     "useCases": [
-      "Customer support automation",
-      "Mental health coaching",
-      "Interactive gaming NPCs"
+      "Building investor pitch decks and class presentations",
+      "Turning research notes into shareable visual reports",
+      "Exporting directly to PowerPoint, Google Slides, or PDF"
     ],
-    "website": "https://hume.ai",
-    "trending": true
-  },
-  {
-    "id": "notebooklm",
-    "name": "NotebookLM",
-    "category": "research",
-    "provider": "Google",
-    "badge": "Frontier",
-    "badgeType": "frontier",
-    "tagline": "Transforming documents into interactive, audio-first knowledge hubs.",
-    "description": "NotebookLM uses RAG (Retrieval-Augmented Generation) to ground AI responses exclusively in your uploaded source materials. Its 'Audio Overview' feature generates natural-sounding podcast-style discussions that synthesize complex research papers and documents.",
-    "releaseYear": "2024",
-    "contextWindow": "50 Sources / 25M Tokens",
-    "openSource": false,
-    "pricing": "Free",
-    "modalities": [
-      "Text",
-      "Audio",
-      "PDF"
-    ],
-    "metrics": {
-      "reasoning": 88,
-      "speed": 80,
-      "costEfficiency": 100,
-      "coding": 60
-    },
-    "useCases": [
-      "Academic research synthesis",
-      "Corporate knowledge management",
-      "Personal learning"
-    ],
-    "website": "https://notebooklm.google.com",
-    "trending": true
+    "website": "https://gamma.app",
+    "trending": false
   },
   {
     "id": "ollama",
     "name": "Ollama",
     "category": "opensource",
-    "provider": "Community",
-    "badge": "Open Weights",
+    "provider": "Ollama",
+    "badge": "Local AI Runtime",
     "badgeType": "open",
-    "tagline": "The standard for running high-performance LLMs locally on consumer hardware.",
-    "description": "Ollama simplifies the deployment of open-source models like Llama 3.3 and Mistral by managing dependencies and hardware acceleration automatically. It has become the foundational layer for local AI development and private inference.",
-    "releaseYear": "2024",
+    "tagline": "Run open-source models like DeepSeek, Llama, Qwen, and Gemma privately on your own computer.",
+    "description": "Ollama makes running powerful open-weight AI models locally as simple as a single command on Windows, macOS, and Linux—giving developers total privacy, offline access, and zero API costs.",
+    "releaseYear": "2024-2026",
     "contextWindow": "Hardware Dependent",
     "openSource": true,
-    "pricing": "Free",
+    "pricing": "100% Free & Open Source",
     "modalities": [
-      "Text",
+      "Local LLMs",
+      "Vision",
       "Code",
-      "Vision"
+      "Local API"
     ],
     "metrics": {
-      "reasoning": 80,
-      "speed": 90,
+      "reasoning": 90,
+      "speed": 96,
       "costEfficiency": 100,
-      "coding": 80
+      "coding": 92
     },
     "useCases": [
-      "Private local inference",
-      "Offline AI development",
-      "Edge computing"
+      "Running private AI models completely offline",
+      "Powering local coding assistants with zero API bills",
+      "Testing and benchmarking open-source weights locally"
     ],
     "website": "https://ollama.com",
     "trending": true
   },
   {
-    "id": "flux-1-1-pro",
-    "name": "FLUX.1.1 Pro",
-    "category": "creative",
-    "provider": "Black Forest Labs",
-    "badge": "Frontier",
-    "badgeType": "creative",
-    "tagline": "State-of-the-art image generation with unmatched prompt adherence and text rendering.",
-    "description": "FLUX.1.1 Pro utilizes a rectified flow transformer architecture to deliver superior image quality and prompt fidelity compared to previous diffusion models. It excels at rendering complex text within images and maintaining consistent anatomical accuracy.",
+    "id": "mistral-le-chat",
+    "name": "Mistral Le Chat",
+    "category": "reasoning",
+    "provider": "Mistral AI",
+    "badge": "Frontier Chat",
+    "badgeType": "frontier",
+    "tagline": "A versatile conversational AI assistant powered by Mistral's latest frontier models.",
+    "description": "Le Chat provides direct access to Mistral's high-performance models including Pixtral and Mistral Large. It features built-in web searching and document analysis capabilities for complex reasoning tasks.",
     "releaseYear": "2024",
-    "contextWindow": "N/A",
+    "contextWindow": "128k Tokens",
     "openSource": false,
-    "pricing": "Commercial API",
+    "pricing": "Free Tier / Pro",
     "modalities": [
+      "Text",
       "Image",
-      "Text"
+      "Code"
     ],
     "metrics": {
-      "reasoning": 65,
+      "reasoning": 95,
+      "speed": 90,
+      "costEfficiency": 95,
+      "coding": 88
+    },
+    "useCases": [
+      "Complex reasoning",
+      "Document analysis",
+      "Web-connected research"
+    ],
+    "website": "https://chat.mistral.ai",
+    "trending": true
+  },
+  {
+    "id": "qwen-chat",
+    "name": "Qwen Chat",
+    "category": "reasoning",
+    "provider": "Alibaba Cloud",
+    "badge": "Frontier Chat",
+    "badgeType": "frontier",
+    "tagline": "Access Alibaba's powerful Qwen series models for advanced reasoning and multilingual tasks.",
+    "description": "Qwen Chat offers a high-performance interface to interact with the Qwen-Max and Qwen-Turbo models. It excels in coding, mathematics, and complex logical reasoning across multiple languages.",
+    "releaseYear": "2024",
+    "contextWindow": "128k Tokens",
+    "openSource": true,
+    "pricing": "Free",
+    "modalities": [
+      "Text",
+      "Code"
+    ],
+    "metrics": {
+      "reasoning": 94,
+      "speed": 92,
+      "costEfficiency": 100,
+      "coding": 92
+    },
+    "useCases": [
+      "Mathematical problem solving",
+      "Multilingual translation",
+      "Code generation"
+    ],
+    "website": "https://chat.qwen.ai",
+    "trending": true
+  },
+  {
+    "id": "ideogram",
+    "name": "Ideogram",
+    "category": "creative",
+    "provider": "Ideogram AI",
+    "badge": "AI Image",
+    "badgeType": "creative",
+    "tagline": "Generate high-quality images with precise text rendering and artistic control.",
+    "description": "Ideogram is a leading generative AI platform known for its exceptional ability to render legible text within images. It provides a robust web interface for prompt-based image creation and editing.",
+    "releaseYear": "2024",
+    "contextWindow": "Web App",
+    "openSource": false,
+    "pricing": "Free Tier / Pro",
+    "modalities": [
+      "Image"
+    ],
+    "metrics": {
+      "reasoning": 70,
       "speed": 85,
-      "costEfficiency": 75,
-      "coding": 60
+      "costEfficiency": 80,
+      "coding": 50
     },
     "useCases": [
       "Graphic design",
-      "Asset generation for games",
-      "High-end photography synthesis"
+      "Typography creation",
+      "Concept art"
     ],
-    "website": "https://blackforestlabs.ai",
+    "website": "https://ideogram.ai",
+    "trending": true
+  },
+  {
+    "id": "consensus",
+    "name": "Consensus",
+    "category": "research",
+    "provider": "Consensus AI",
+    "badge": "Research Agent",
+    "badgeType": "agentic",
+    "tagline": "Search through millions of peer-reviewed scientific papers to get evidence-based answers.",
+    "description": "Consensus uses AI to synthesize findings from academic literature, providing citations for every claim made. It is an essential tool for researchers and students looking for verified, scientific information.",
+    "releaseYear": "2024",
+    "contextWindow": "Web App",
+    "openSource": false,
+    "pricing": "Free Tier / Pro",
+    "modalities": [
+      "Text"
+    ],
+    "metrics": {
+      "reasoning": 90,
+      "speed": 80,
+      "costEfficiency": 85,
+      "coding": 50
+    },
+    "useCases": [
+      "Academic literature review",
+      "Evidence-based research",
+      "Fact checking"
+    ],
+    "website": "https://consensus.app",
+    "trending": true
+  },
+  {
+    "id": "hume-ai",
+    "name": "Hume EVI",
+    "category": "voice",
+    "provider": "Hume AI",
+    "badge": "Voice Agent",
+    "badgeType": "voice",
+    "tagline": "An empathetic voice interface that understands human emotional expression.",
+    "description": "Hume's Empathic Voice Interface (EVI) is the first conversational AI trained to detect and respond to vocal prosody and emotional cues. It allows for natural, human-like voice interactions directly in the browser.",
+    "releaseYear": "2024",
+    "contextWindow": "Web App",
+    "openSource": false,
+    "pricing": "Free Tier / Pro",
+    "modalities": [
+      "Voice",
+      "Text"
+    ],
+    "metrics": {
+      "reasoning": 85,
+      "speed": 95,
+      "costEfficiency": 75,
+      "coding": 50
+    },
+    "useCases": [
+      "Emotional support",
+      "Customer service simulation",
+      "Natural voice interaction"
+    ],
+    "website": "https://hume.ai",
     "trending": true
   }
 ];
 
-// Available Categories for new tools
+// Available Categories
 const AI_CATEGORIES = [
   { id: "all", name: "All Tools" },
-  { id: "reasoning", name: "Reasoning & Frontier" },
-  { id: "coding", name: "Agentic Engineering" },
-  { id: "creative", name: "Generative Vision & Video" },
-  { id: "voice", name: "Voice & Multimodal" },
-  { id: "research", name: "Research & Knowledge" },
-  { id: "opensource", name: "Open Source & Local" }
+  { id: "reasoning", name: "Chat & Reasoning" },
+  { id: "coding", name: "Coding & App Builders" },
+  { id: "creative", name: "Video, Image & Music" },
+  { id: "voice", name: "Voice & Audio" },
+  { id: "research", name: "Research & Docs" },
+  { id: "opensource", name: "Open Source & Hubs" }
 ];

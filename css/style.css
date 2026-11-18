@@ -720,6 +720,17 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Card Actions */
+.clickable-app-card {
+  cursor: pointer;
+}
+
+.tool-domain-inline {
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  opacity: 0.9;
+}
+
 .tool-card-footer {
   display: flex;
   align-items: center;
@@ -727,6 +738,12 @@ h1, h2, h3, h4, h5 {
   gap: 12px;
   padding-top: 14px;
   border-top: 1px solid var(--border-subtle);
+}
+
+.card-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .compare-checkbox-label {

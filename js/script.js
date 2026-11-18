@@ -1,21 +1,32 @@
 /* ===================================================================
-   Mindora AI - Core JavaScript (Empty Slate Engine)
+   Mindora AI - Core JavaScript (Direct Global AI App Launcher)
    =================================================================== */
 
 let currentCategory = "all";
 let currentSearchQuery = "";
-let currentSort = "name";
+let currentSort = "trending";
 const selectedToolsForCompare = new Set();
 
 document.addEventListener("DOMContentLoaded", () => {
   initNeuralCanvas();
   initToolExplorer();
-  initAddToolSystem();
   initComparisonSystem();
   initModals();
   initInteractions();
   updateToolCounters();
 });
+
+/* ===================================================================
+   Helper: Extract Clean Hostname from Official URL
+   =================================================================== */
+function getDisplayDomain(url) {
+  if (!url) return "";
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
 
 /* ===================================================================
    1. Interactive Neural Canvas Background
@@ -71,7 +82,6 @@ function initNeuralCanvas() {
       if (this.x < 0 || this.x > width) this.vx *= -1;
       if (this.y < 0 || this.y > height) this.vy *= -1;
 
-      // Mouse interactive push
       if (mouse.x !== null && mouse.y !== null) {
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
@@ -127,7 +137,7 @@ function initNeuralCanvas() {
 }
 
 /* ===================================================================
-   2. Tool Explorer & Empty State Renderer
+   2. Tool Explorer & Direct App Launch Renderer
    =================================================================== */
 function initToolExplorer() {
   const grid = document.getElementById("toolsGrid");
@@ -140,18 +150,14 @@ function initToolExplorer() {
   window.renderTools = function () {
     updateToolCounters();
 
-    // If completely empty database
-    if (AI_TOOLS_DATA.length === 0) {
+    if (!AI_TOOLS_DATA || AI_TOOLS_DATA.length === 0) {
       grid.innerHTML = `
         <div class="empty-tools-card" style="grid-column: 1 / -1; text-align: center; padding: 64px 24px; background: var(--bg-card); border: 1px dashed rgba(0, 242, 254, 0.3); border-radius: var(--radius-lg); backdrop-filter: blur(14px);">
-          <div style="font-size: 3.2rem; margin-bottom: 14px; color: var(--accent-cyan);">🌌</div>
-          <h3 style="font-size: 1.6rem; margin-bottom: 10px;">The Registry is Currently Empty</h3>
-          <p style="color: var(--text-muted); max-width: 520px; margin: 0 auto 26px; font-size: 0.95rem; line-height: 1.6;">
-            All pre-loaded tools have been removed as requested. Mindora AI is in clean slate mode, ready to receive your chosen evolving AI tools.
+          <div style="font-size: 3rem; margin-bottom: 14px;">🌌</div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Awaiting Next Global Research Sync</h3>
+          <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto;">
+            New verified AI applications are automatically synced daily at 9:00 AM and 6:00 PM PKT.
           </p>
-          <button class="btn btn-primary" onclick="openAddToolModal()">
-            + Register First AI Tool
-          </button>
         </div>
       `;
       return;
@@ -162,15 +168,19 @@ function initToolExplorer() {
         currentCategory === "all" || tool.category === currentCategory;
       const matchesSearch =
         tool.name.toLowerCase().includes(currentSearchQuery) ||
-        tool.provider.toLowerCase().includes(currentSearchQuery) ||
-        tool.tagline.toLowerCase().includes(currentSearchQuery) ||
-        (tool.modalities && tool.modalities.some((m) => m.toLowerCase().includes(currentSearchQuery)));
+        (tool.provider || "").toLowerCase().includes(currentSearchQuery) ||
+        (tool.tagline || "").toLowerCase().includes(currentSearchQuery) ||
+        (tool.website || "").toLowerCase().includes(currentSearchQuery) ||
+        (tool.modalities &&
+          tool.modalities.some((m) => m.toLowerCase().includes(currentSearchQuery)));
       return matchesCategory && matchesSearch;
     });
 
     // Sorting
     filtered.sort((a, b) => {
-      if (currentSort === "reasoning") {
+      if (currentSort === "trending") {
+        return (b.trending ? 1 : 0) - (a.trending ? 1 : 0);
+      } else if (currentSort === "reasoning") {
         return (b.metrics?.reasoning || 0) - (a.metrics?.reasoning || 0);
       } else if (currentSort === "coding") {
         return (b.metrics?.coding || 0) - (a.metrics?.coding || 0);
@@ -183,8 +193,8 @@ function initToolExplorer() {
       grid.innerHTML = `
         <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: var(--text-muted);">
           <div style="font-size: 2.5rem; margin-bottom: 12px;">🔍</div>
-          <h3>No tools match "${currentSearchQuery}" in category "${currentCategory}"</h3>
-          <p style="margin-top: 8px;">Try clearing filters or search query.</p>
+          <h3>No AI apps match "${currentSearchQuery}"</h3>
+          <p style="margin-top: 8px;">Try searching for ChatGPT, NotebookLM, Hugging Face, Claude, or clear your filter.</p>
         </div>
       `;
       return;
@@ -197,23 +207,26 @@ function initToolExplorer() {
           .split(" ")
           .map((n) => n[0])
           .slice(0, 2)
-          .join("");
+          .join("")
+          .toUpperCase();
 
         const reasoningScore = tool.metrics?.reasoning || 85;
         const codingScore = tool.metrics?.coding || 85;
+        const appUrl = tool.website || "#";
+        const domain = getDisplayDomain(appUrl);
 
         return `
-        <div class="tool-card" data-id="${tool.id}">
+        <div class="tool-card clickable-app-card" data-id="${tool.id}" data-url="${appUrl}" title="Click to open ${tool.name} (${domain})">
           <div>
             <div class="tool-card-header">
               <div class="tool-identity">
                 <div class="tool-avatar">${initials}</div>
                 <div>
                   <h3 class="tool-name">${tool.name}</h3>
-                  <span class="tool-provider">${tool.provider}</span>
+                  <span class="tool-provider">${tool.provider} &middot; <span class="tool-domain-inline">${domain}</span></span>
                 </div>
               </div>
-              <span class="tool-badge ${tool.badgeType || 'frontier'}">${tool.badge || 'Registered'}</span>
+              <span class="tool-badge ${tool.badgeType || "frontier"}">${tool.badge || "Live App"}</span>
             </div>
 
             <p class="tool-tagline">${tool.tagline}</p>
@@ -235,7 +248,7 @@ function initToolExplorer() {
 
               <div class="metric-bar-group">
                 <div class="metric-label-row">
-                  <span>Coding & Agentic</span>
+                  <span>Coding &amp; Utility</span>
                   <span>${codingScore}%</span>
                 </div>
                 <div class="metric-track">
@@ -246,13 +259,18 @@ function initToolExplorer() {
           </div>
 
           <div class="tool-card-footer">
-            <label class="compare-checkbox-label" title="Compare tool">
+            <label class="compare-checkbox-label" title="Select to compare side-by-side">
               <input type="checkbox" class="tool-compare-chk" data-id="${tool.id}" ${isChecked ? "checked" : ""}>
               <span>Compare</span>
             </label>
-            <button class="btn btn-outline card-btn view-details-btn" data-id="${tool.id}">
-              Inspect Specs ↗
-            </button>
+            <div class="card-footer-actions">
+              <button type="button" class="btn btn-outline card-btn view-details-btn" data-id="${tool.id}">
+                Specs
+              </button>
+              <a href="${appUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary card-btn launch-app-btn">
+                Open App ↗
+              </a>
+            </div>
           </div>
         </div>
       `;
@@ -262,7 +280,6 @@ function initToolExplorer() {
     attachCardEventListeners();
   };
 
-  // Event Listeners
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       currentSearchQuery = e.target.value.toLowerCase().trim();
@@ -290,19 +307,38 @@ function initToolExplorer() {
 }
 
 function updateToolCounters() {
-  const count = AI_TOOLS_DATA.length;
+  const count = AI_TOOLS_DATA ? AI_TOOLS_DATA.length : 0;
   const navCountEl = document.getElementById("navToolCount");
   const statCountEl = document.getElementById("statToolsCount");
   const allBtn = document.querySelector('.filter-btn[data-category="all"]');
 
-  if (navCountEl) navCountEl.textContent = `${count} Tools in Database`;
+  if (navCountEl) navCountEl.textContent = `${count} Live AI Apps`;
   if (statCountEl) statCountEl.textContent = count.toString();
-  if (allBtn) allBtn.textContent = `All (${count})`;
+  if (allBtn) allBtn.textContent = `All Tools (${count})`;
 }
 
 function attachCardEventListeners() {
+  // Clicking anywhere on the card launches the real official web app directly
+  document.querySelectorAll(".clickable-app-card").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      // Ignore clicks on compare checkbox, specs button, or the anchor itself (anchor handles navigation natively)
+      if (
+        e.target.closest(".compare-checkbox-label") ||
+        e.target.closest(".view-details-btn") ||
+        e.target.closest(".launch-app-btn")
+      ) {
+        return;
+      }
+      const url = card.getAttribute("data-url");
+      if (url && url.startsWith("http")) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+    });
+  });
+
   document.querySelectorAll(".tool-compare-chk").forEach((chk) => {
     chk.addEventListener("change", (e) => {
+      e.stopPropagation();
       const toolId = e.target.getAttribute("data-id");
       if (e.target.checked) {
         if (selectedToolsForCompare.size >= 3) {
@@ -320,7 +356,8 @@ function attachCardEventListeners() {
   });
 
   document.querySelectorAll(".view-details-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
       const toolId = btn.getAttribute("data-id");
       openToolModal(toolId);
     });
@@ -328,127 +365,7 @@ function attachCardEventListeners() {
 }
 
 /* ===================================================================
-   3. Add Tool Modal & Dynamic Registration Engine
-   =================================================================== */
-function initAddToolSystem() {
-  const addModal = document.getElementById("addToolModalOverlay");
-  const closeBtn = document.getElementById("addToolCloseBtn");
-  const cancelBtn = document.getElementById("btnCancelAddTool");
-  const form = document.getElementById("addToolForm");
-
-  // Open triggers
-  const triggers = [
-    document.getElementById("heroAddToolBtn"),
-    document.getElementById("navAddToolBtn"),
-    document.getElementById("controlBarAddBtn"),
-    document.getElementById("footerAddToolLink")
-  ];
-
-  window.openAddToolModal = function () {
-    if (addModal) addModal.classList.add("open");
-  };
-
-  function closeAddToolModal() {
-    if (addModal) addModal.classList.remove("open");
-  }
-
-  triggers.forEach((btn) => {
-    if (btn) {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        openAddToolModal();
-      });
-    }
-  });
-
-  if (closeBtn) closeBtn.addEventListener("click", closeAddToolModal);
-  if (cancelBtn) cancelBtn.addEventListener("click", closeAddToolModal);
-
-  // Sliders dynamic display
-  const rSlider = document.getElementById("inputToolReasoning");
-  const rLabel = document.getElementById("labelReasoningScore");
-  if (rSlider && rLabel) {
-    rSlider.addEventListener("input", (e) => {
-      rLabel.textContent = `${e.target.value}%`;
-    });
-  }
-
-  const cSlider = document.getElementById("inputToolCoding");
-  const cLabel = document.getElementById("labelCodingScore");
-  if (cSlider && cLabel) {
-    cSlider.addEventListener("input", (e) => {
-      cLabel.textContent = `${e.target.value}%`;
-    });
-  }
-
-  // Handle Form Submission
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const name = document.getElementById("inputToolName").value.trim();
-      const category = document.getElementById("inputToolCategory").value;
-      const provider = document.getElementById("inputToolProvider").value.trim();
-      const tagline = document.getElementById("inputToolTagline").value.trim();
-      const modalitiesRaw = document.getElementById("inputToolModalities").value.trim();
-      const reasoning = parseInt(rSlider ? rSlider.value : 85, 10);
-      const coding = parseInt(cSlider ? cSlider.value : 85, 10);
-
-      const modalities = modalitiesRaw
-        ? modalitiesRaw.split(",").map((s) => s.trim()).filter(Boolean)
-        : ["Text", "Code"];
-
-      const id = name.toLowerCase().replace(/[^a-z0-9]+/g, "-") + "-" + Date.now();
-
-      const newTool = {
-        id,
-        name,
-        category,
-        provider,
-        badge: "User Registered",
-        badgeType: category === "reasoning" ? "frontier" : category === "coding" ? "agentic" : "open",
-        tagline,
-        description: `${name} registered into the Mindora AI hub. Specialized in ${category} workflows.`,
-        modalities,
-        metrics: {
-          reasoning,
-          coding,
-          costEfficiency: 90
-        },
-        contextWindow: "128k Tokens",
-        pricing: "Configured by Provider",
-        useCases: [
-          `Primary deployment in ${category} tasks`,
-          "Integrated into Mindora AI architecture"
-        ]
-      };
-
-      AI_TOOLS_DATA.unshift(newTool);
-      window.renderTools();
-      closeAddToolModal();
-      form.reset();
-      if (rLabel) rLabel.textContent = "90%";
-      if (cLabel) cLabel.textContent = "90%";
-      showToast(`Registered "${name}" to Mindora AI!`);
-    });
-  }
-
-  // Reset/Clear link
-  const clearLink = document.getElementById("footerClearToolsLink");
-  if (clearLink) {
-    clearLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      AI_TOOLS_DATA = [];
-      selectedToolsForCompare.clear();
-      if (window.updateComparisonDrawer) updateComparisonDrawer();
-      window.renderTools();
-      showToast("Registry reset to clean slate (0 tools).");
-    });
-  }
-}
-
-/* ===================================================================
-   4. Comparison System & Floating Drawer
+   3. Comparison System & Floating Drawer
    =================================================================== */
 function initComparisonSystem() {
   const drawer = document.getElementById("compareDrawer");
@@ -507,7 +424,7 @@ function initComparisonSystem() {
 }
 
 /* ===================================================================
-   5. Modals (Specs Inspector & Compare Matrix)
+   4. Modals (Specs Inspector & Compare Matrix)
    =================================================================== */
 function initModals() {
   const overlay = document.getElementById("modalOverlay");
@@ -527,8 +444,6 @@ function initModals() {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeModal();
-      const addModal = document.getElementById("addToolModalOverlay");
-      if (addModal) addModal.classList.remove("open");
     }
   });
 
@@ -540,10 +455,13 @@ function initModals() {
     const modalContent = overlay.querySelector(".modal-content");
     modalContent.className = "modal-content";
 
+    const appUrl = tool.website || "#";
+    const domain = getDisplayDomain(appUrl);
+
     modalBody.innerHTML = `
       <div class="modal-header-meta">
-        <span class="tool-badge ${tool.badgeType || 'frontier'}">${tool.badge || 'Registered'}</span>
-        <span style="font-size: 0.82rem; color: var(--text-dim);">${tool.category}</span>
+        <span class="tool-badge ${tool.badgeType || "frontier"}">${tool.badge || "Live App"}</span>
+        <span style="font-size: 0.82rem; color: var(--text-dim);">${domain}</span>
       </div>
       <h2 class="modal-tool-name">${tool.name}</h2>
       <div class="modal-tagline">${tool.tagline}</div>
@@ -551,34 +469,37 @@ function initModals() {
         ${tool.description}
       </p>
 
-      <div class="modal-section-title">Telemetry & Specifications</div>
+      <div class="modal-section-title">Telemetry &amp; Specifications</div>
       <div class="specs-grid">
         <div class="spec-cell">
           <span class="spec-key">Provider / Lab</span>
           <span class="spec-val">${tool.provider}</span>
         </div>
         <div class="spec-cell">
-          <span class="spec-key">Category</span>
-          <span class="spec-val">${tool.category}</span>
+          <span class="spec-key">Pricing</span>
+          <span class="spec-val">${tool.pricing || "Free Tier / Pro"}</span>
         </div>
         <div class="spec-cell">
-          <span class="spec-key">Reasoning Benchmark</span>
-          <span class="spec-val" style="color: var(--accent-cyan);">${tool.metrics?.reasoning || 85}%</span>
+          <span class="spec-key">Context / Scope</span>
+          <span class="spec-val">${tool.contextWindow || "Web App"}</span>
         </div>
         <div class="spec-cell">
-          <span class="spec-key">Coding & Autonomy</span>
-          <span class="spec-val" style="color: var(--accent-purple);">${tool.metrics?.coding || 85}%</span>
+          <span class="spec-key">Open Source</span>
+          <span class="spec-val">${tool.openSource ? "Yes (Open Weights / OSS)" : "Proprietary Cloud App"}</span>
         </div>
       </div>
 
-      <div class="modal-section-title">Operational Roles</div>
+      <div class="modal-section-title">Best Ways to Use ${tool.name}</div>
       <ul class="modal-usecases">
-        ${(tool.useCases || ["Primary task automation"]).map((u) => `<li>${u}</li>`).join("")}
+        ${(tool.useCases || ["Everyday AI assistance"]).map((u) => `<li>${u}</li>`).join("")}
       </ul>
 
-      <div style="display: flex; gap: 14px; margin-top: 30px;">
-        <button class="btn btn-outline" style="flex: 1;" onclick="document.getElementById('modalOverlay').classList.remove('open')">
-          Close Inspector
+      <div style="display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap;">
+        <a href="${appUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1;">
+          Launch ${tool.name} App (${domain}) ↗
+        </a>
+        <button class="btn btn-outline" onclick="document.getElementById('modalOverlay').classList.remove('open')">
+          Close
         </button>
       </div>
     `;
@@ -592,13 +513,12 @@ function initModals() {
     modalContent.className = "modal-content compare-modal-content";
 
     const tools = AI_TOOLS_DATA.filter((t) => selectedToolsForCompare.has(t.id));
-
     if (tools.length === 0) return;
 
     modalBody.innerHTML = `
-      <h2 style="font-size: 1.8rem; margin-bottom: 6px;">Frontier Tool Comparison Matrix</h2>
+      <h2 style="font-size: 1.8rem; margin-bottom: 6px;">AI App Comparison Matrix</h2>
       <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">
-        Head-to-head architectural telemetry, capability indices, and runtime metrics.
+        Compare capabilities side-by-side and launch any official app directly.
       </p>
 
       <div class="comparison-table-wrapper">
@@ -606,7 +526,12 @@ function initModals() {
           <thead>
             <tr>
               <th>Feature / Metric</th>
-              ${tools.map((t) => `<th>${t.name}</th>`).join("")}
+              ${tools
+                .map(
+                  (t) =>
+                    `<th>${t.name} <a href="${t.website}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: none; margin-left: 4px;">↗</a></th>`
+                )
+                .join("")}
             </tr>
           </thead>
           <tbody>
@@ -615,20 +540,29 @@ function initModals() {
               ${tools.map((t) => `<td>${t.provider}</td>`).join("")}
             </tr>
             <tr>
-              <td><strong>Category</strong></td>
-              ${tools.map((t) => `<td>${t.category}</td>`).join("")}
+              <td><strong>Pricing</strong></td>
+              ${tools.map((t) => `<td>${t.pricing || "Freemium"}</td>`).join("")}
             </tr>
             <tr>
               <td><strong>Reasoning Index</strong></td>
               ${tools.map((t) => `<td><strong style="color: var(--accent-cyan);">${t.metrics?.reasoning || 85}%</strong></td>`).join("")}
             </tr>
             <tr>
-              <td><strong>Coding Index</strong></td>
+              <td><strong>Coding &amp; Utility</strong></td>
               ${tools.map((t) => `<td><strong style="color: var(--accent-purple);">${t.metrics?.coding || 85}%</strong></td>`).join("")}
             </tr>
             <tr>
               <td><strong>Modalities</strong></td>
               ${tools.map((t) => `<td>${(t.modalities || []).join(", ")}</td>`).join("")}
+            </tr>
+            <tr>
+              <td><strong>Direct App Link</strong></td>
+              ${tools
+                .map(
+                  (t) =>
+                    `<td><a href="${t.website}" target="_blank" rel="noopener noreferrer" class="btn btn-primary card-btn">Open App ↗</a></td>`
+                )
+                .join("")}
             </tr>
           </tbody>
         </table>
@@ -640,10 +574,9 @@ function initModals() {
 }
 
 /* ===================================================================
-   6. General Interactions & Toast
+   5. General Interactions & Toast
    =================================================================== */
 function initInteractions() {
-  // Mobile Menu Toggle
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const navLinks = document.querySelector(".nav-links");
   if (mobileMenuBtn && navLinks) {
@@ -658,7 +591,6 @@ function initInteractions() {
     });
   }
 
-  // Newsletter Form
   const newsletterForm = document.getElementById("newsletterForm");
   if (newsletterForm) {
     newsletterForm.addEventListener("submit", (e) => {
@@ -671,7 +603,6 @@ function initInteractions() {
     });
   }
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       const targetId = this.getAttribute("href");
