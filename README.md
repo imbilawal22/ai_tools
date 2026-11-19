@@ -2,6 +2,8 @@
 
 An attractive, interactive web platform tracking, cataloging, and benchmarking the evolving landscape of Artificial Intelligence tools around the globe.
 
+🌐 **Live Website**: [https://imbilawal22.github.io/ai_tools/](https://imbilawal22.github.io/ai_tools/)
+
 ---
 
 ## ⚡ Automated AI Research & Deployment Pipeline
@@ -19,7 +21,7 @@ Mindora AI features an automated GitHub Actions pipeline that performs global AI
 ## 🚀 Manual Workflow Trigger
 
 You can also run the research cycle manually anytime:
-1. Navigate to [GitHub Actions](https://github.com/ittrackinstitute0-lgtm/mindora-AI-/actions).
+1. Navigate to [GitHub Actions](https://github.com/imbilawal22/ai_tools/actions).
 2. Select **Mindora AI - Automated Evolving AI Tools Pipeline**.
 3. Click **Run workflow** -> **Branch: main** -> **Run workflow**.
 

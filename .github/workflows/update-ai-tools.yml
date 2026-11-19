@@ -1,6 +1,9 @@
 name: Mindora AI - Automated Evolving AI Tools Pipeline
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     # 9:00 AM PKT (04:00 UTC) and 6:00 PM PKT (13:00 UTC) every day
     - cron: '0 4,13 * * *'
