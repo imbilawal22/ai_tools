@@ -70,7 +70,7 @@ You can also run the automated research pipeline locally on your Windows machine
 ├── css/
 │   └── style.css                # Dark cybernetic theme & animations
 ├── js/
-│   ├── data.js                  # Dynamic AI tools registry (36+ live apps)
+│   ├── data.js                  # Dynamic AI tools registry (46+ live apps)
 │   └── script.js                # Neural canvas, live filtering, comparison & inspector
 ├── README.md                    # Documentation
 └── .gitignore                   # Ignored files
