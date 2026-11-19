@@ -56,6 +56,12 @@ jobs:
             echo "Successfully committed and pushed new evolving AI tools."
           fi
 
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -71,4 +77,5 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
+        continue-on-error: true
         uses: actions/deploy-pages@v4
