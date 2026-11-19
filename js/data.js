@@ -1,7 +1,7 @@
 // Mindora AI - Global Verified Evolving AI Tools Dataset
 // Every entry links directly to the real, live official web application.
 // Automatically researched & verified via Mindora AI Pipeline (9:00 AM & 6:00 PM PKT)
-// Total Verified Live Apps: 23
+// Total Verified Live Apps: 36
 
 let AI_TOOLS_DATA = [
   {
@@ -749,6 +749,430 @@ let AI_TOOLS_DATA = [
       "Natural voice interaction"
     ],
     "website": "https://hume.ai",
+    "trending": true
+  },
+  {
+    "id": "windsurf",
+    "name": "Windsurf",
+    "category": "coding",
+    "provider": "Codeium",
+    "badge": "Flow Coding",
+    "badgeType": "agentic",
+    "tagline": "Next-generation agentic AI IDE with Cascade multi-file intelligence and collaborative coding flow.",
+    "description": "Windsurf pairs deep contextual codebase indexing with Cascade, an autonomous agent that creates, refactors, and debugs multi-file projects in real time.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Entire Codebase / Real-time",
+    "openSource": false,
+    "pricing": "Free / Pro / Team",
+    "modalities": [
+      "Code",
+      "Terminal",
+      "Git",
+      "Text"
+    ],
+    "metrics": {
+      "reasoning": 95,
+      "speed": 94,
+      "costEfficiency": 92,
+      "coding": 98
+    },
+    "useCases": [
+      "Full-stack multi-file code editing with Cascade agent",
+      "Deep codebase indexing and instant semantic code search",
+      "Automated unit testing, terminal command execution, and refactoring"
+    ],
+    "website": "https://codeium.com/windsurf",
+    "trending": true
+  },
+  {
+    "id": "luma-dream-machine",
+    "name": "Luma Dream Machine",
+    "category": "creative",
+    "provider": "Luma AI",
+    "badge": "Cinematic Video",
+    "badgeType": "creative",
+    "tagline": "Photorealistic generative AI video model producing cinematic 5-second shots with camera motion control.",
+    "description": "Luma Dream Machine generates high-fidelity, physically consistent video scenes from text prompts and still photos with fluid motion dynamics and multi-angle camera direction.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Text & Keyframe Prompts",
+    "openSource": false,
+    "pricing": "Free Credits / Standard / Pro",
+    "modalities": [
+      "Text to Video",
+      "Image to Video",
+      "Camera Motion"
+    ],
+    "metrics": {
+      "reasoning": 88,
+      "speed": 89,
+      "costEfficiency": 87,
+      "coding": 60
+    },
+    "useCases": [
+      "Generating realistic cinematic shots with dynamic camera angles",
+      "Transforming static product images and concept art into videos",
+      "Creative storyboarding and advertising video sequences"
+    ],
+    "website": "https://lumalabs.ai/dream-machine",
+    "trending": true
+  },
+  {
+    "id": "udio",
+    "name": "Udio",
+    "category": "creative",
+    "provider": "Udio",
+    "badge": "AI Music Studio",
+    "badgeType": "creative",
+    "tagline": "Full-fidelity AI music generation engine creating studio-quality songs, vocals, and arrangements in any genre.",
+    "description": "Built by former DeepMind researchers, Udio crafts emotionally resonant songs with authentic vocal timbres, multi-section stems, and acoustic mastery spanning jazz, EDM, pop, and classical.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Full Song Compositions",
+    "openSource": false,
+    "pricing": "Free / Standard / Pro",
+    "modalities": [
+      "Audio",
+      "Vocals",
+      "Lyrics",
+      "Stems"
+    ],
+    "metrics": {
+      "reasoning": 89,
+      "speed": 87,
+      "costEfficiency": 90,
+      "coding": 55
+    },
+    "useCases": [
+      "Creating broadcast-ready songs and instrumentals from text",
+      "Vocal arrangement, stem separation, and audio inpainting",
+      "Composing original soundtracks for podcasts, films, and games"
+    ],
+    "website": "https://www.udio.com",
+    "trending": true
+  },
+  {
+    "id": "heygen",
+    "name": "HeyGen",
+    "category": "creative",
+    "provider": "HeyGen",
+    "badge": "AI Video Avatars",
+    "badgeType": "creative",
+    "tagline": "Enterprise AI video generation platform producing studio-grade avatar presentations and multilingual video translations.",
+    "description": "HeyGen delivers photorealistic AI digital twins with natural lip-syncing, custom voice cloning, and interactive video translation in 175+ languages for marketing and training.",
+    "releaseYear": "2023-2026",
+    "contextWindow": "Multi-Scene Video Studio",
+    "openSource": false,
+    "pricing": "Free Trial / Creator / Team",
+    "modalities": [
+      "Avatars",
+      "Voice Cloning",
+      "Video Translation",
+      "Lip-Sync"
+    ],
+    "metrics": {
+      "reasoning": 88,
+      "speed": 91,
+      "costEfficiency": 85,
+      "coding": 62
+    },
+    "useCases": [
+      "Creating personalized sales outreach and interactive video demos",
+      "Automatic multi-language video localization with authentic lip-sync",
+      "Building corporate training courses with virtual presenters"
+    ],
+    "website": "https://www.heygen.com",
+    "trending": true
+  },
+  {
+    "id": "pika",
+    "name": "Pika",
+    "category": "creative",
+    "provider": "Pika Labs",
+    "badge": "Pika Effects",
+    "badgeType": "creative",
+    "tagline": "Creative AI video platform featuring playful physics simulations, Pika Effects (melt, crush, explode), and scene expansion.",
+    "description": "Pika 2.0 brings imaginative physics effects like inflate, melt, crumble, and explode into generative video, empowering digital artists and creators with granular camera controls.",
+    "releaseYear": "2023-2026",
+    "contextWindow": "Video & 3D Effects",
+    "openSource": false,
+    "pricing": "Free Tier / Standard / Unlimited",
+    "modalities": [
+      "Text to Video",
+      "Image to Video",
+      "Pika Effects",
+      "Audio"
+    ],
+    "metrics": {
+      "reasoning": 86,
+      "speed": 92,
+      "costEfficiency": 88,
+      "coding": 58
+    },
+    "useCases": [
+      "Animating surreal physics effects for social media and viral clips",
+      "Generating high-resolution AI video scenes with prompt modifiers",
+      "Modifying and extending existing video clips with generative fill"
+    ],
+    "website": "https://pika.art",
+    "trending": true
+  },
+  {
+    "id": "cartesia",
+    "name": "Cartesia",
+    "category": "voice",
+    "provider": "Cartesia",
+    "badge": "Sub-100ms Voice",
+    "badgeType": "voice",
+    "tagline": "Ultra-low latency real-time voice intelligence engine powering conversational agents with sub-100ms response times.",
+    "description": "Cartesia's Sonic state-space model produces ultra-fast streaming text-to-speech with natural prosody, emotional inflection, and zero perceptible lag for live voice AI applications.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Real-time Streaming Audio",
+    "openSource": false,
+    "pricing": "Usage-based / Enterprise",
+    "modalities": [
+      "Ultra-fast Audio",
+      "Voice Cloning",
+      "Streaming TTS"
+    ],
+    "metrics": {
+      "reasoning": 91,
+      "speed": 99,
+      "costEfficiency": 93,
+      "coding": 80
+    },
+    "useCases": [
+      "Sub-100ms conversational AI voice agents and customer support bots",
+      "Real-time voice translation and gaming NPC voice dialogue",
+      "Dynamic voice cloning and expressive narration"
+    ],
+    "website": "https://cartesia.ai",
+    "trending": true
+  },
+  {
+    "id": "elicit",
+    "name": "Elicit",
+    "category": "research",
+    "provider": "Elicit",
+    "badge": "Scientific Papers",
+    "badgeType": "frontier",
+    "tagline": "AI research assistant analyzing 200M+ academic papers with structured data extraction and evidence synthesis.",
+    "description": "Elicit automates systematic literature reviews by extracting claims, methodologies, sample sizes, and empirical findings across peer-reviewed scientific publications.",
+    "releaseYear": "2022-2026",
+    "contextWindow": "200M+ Academic Papers",
+    "openSource": false,
+    "pricing": "Free / Plus / Enterprise",
+    "modalities": [
+      "Academic Papers",
+      "Citations",
+      "PDF Synthesis"
+    ],
+    "metrics": {
+      "reasoning": 95,
+      "speed": 88,
+      "costEfficiency": 90,
+      "coding": 70
+    },
+    "useCases": [
+      "Automating systematic literature reviews across scientific journals",
+      "Extracting structured comparison tables from hundreds of research PDFs",
+      "Finding consensus answers grounded in empirical scientific research"
+    ],
+    "website": "https://elicit.com",
+    "trending": true
+  },
+  {
+    "id": "napkin-ai",
+    "name": "Napkin AI",
+    "category": "research",
+    "provider": "Napkin",
+    "badge": "Visual Diagrams",
+    "badgeType": "creative",
+    "tagline": "Transforms raw text and documents into clean, interactive business visuals, diagrams, mind maps, and infographics.",
+    "description": "Napkin AI parses paragraphs and articles to automatically generate professional flowcharts, Venn diagrams, process maps, and concept illustrations in vector SVG format.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Documents & Presentations",
+    "openSource": false,
+    "pricing": "Free Tier / Pro",
+    "modalities": [
+      "Text to Diagrams",
+      "Vector SVG",
+      "Mind Maps"
+    ],
+    "metrics": {
+      "reasoning": 90,
+      "speed": 93,
+      "costEfficiency": 95,
+      "coding": 75
+    },
+    "useCases": [
+      "Converting technical documentation into clean visual process diagrams",
+      "Generating presentation-ready infographics and mind maps from text notes",
+      "Exporting crisp vector SVGs for pitch decks, blogs, and marketing sites"
+    ],
+    "website": "https://www.napkin.ai",
+    "trending": true
+  },
+  {
+    "id": "lm-studio",
+    "name": "LM Studio",
+    "category": "opensource",
+    "provider": "Element Labs",
+    "badge": "Local LLM Studio",
+    "badgeType": "open",
+    "tagline": "Discover, download, and run local LLMs (DeepSeek, Llama, Qwen, Mistral) on your machine with 100% privacy.",
+    "description": "LM Studio provides a sleek desktop environment to run open-weight models offline. It includes an OpenAI-compatible local server, GPU acceleration, and one-click model quant downloads.",
+    "releaseYear": "2023-2026",
+    "contextWindow": "Hardware & VRAM Bound",
+    "openSource": false,
+    "pricing": "Free for Personal Use",
+    "modalities": [
+      "Local LLMs",
+      "OpenAI-compatible API",
+      "Chat",
+      "Vision"
+    ],
+    "metrics": {
+      "reasoning": 94,
+      "speed": 93,
+      "costEfficiency": 100,
+      "coding": 92
+    },
+    "useCases": [
+      "Running offline, 100% private AI chat and coding on local computers",
+      "Hosting a local OpenAI-compatible API endpoint for developer testing",
+      "Benchmarking open-weights models across GGUF quantization levels"
+    ],
+    "website": "https://lmstudio.ai",
+    "trending": true
+  },
+  {
+    "id": "replit-agent",
+    "name": "Replit Agent",
+    "category": "coding",
+    "provider": "Replit",
+    "badge": "Autonomous Dev",
+    "badgeType": "agentic",
+    "tagline": "Autonomous AI developer that builds, provisions databases, installs packages, and deploys full-stack web applications from natural language prompts.",
+    "description": "Replit Agent understands project scope, designs database schemas, writes full-stack code, iterates based on feedback, and deploys live web applications in minutes.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Cloud Workspace & DB",
+    "openSource": false,
+    "pricing": "Replit Core / Enterprise",
+    "modalities": [
+      "Code",
+      "Cloud Databases",
+      "Deployment",
+      "Terminal"
+    ],
+    "metrics": {
+      "reasoning": 93,
+      "speed": 90,
+      "costEfficiency": 88,
+      "coding": 96
+    },
+    "useCases": [
+      "Generating and deploying complete full-stack web apps from natural language prompts",
+      "Auto-provisioning PostgreSQL databases and setting up backend APIs",
+      "Rapid prototyping and iterative feature development on the cloud"
+    ],
+    "website": "https://replit.com",
+    "trending": true
+  },
+  {
+    "id": "poe",
+    "name": "Poe",
+    "category": "reasoning",
+    "provider": "Quora",
+    "badge": "Multi-Model Hub",
+    "badgeType": "frontier",
+    "tagline": "Fast, unified AI ecosystem letting users chat with GPT-4o, Claude 3.5, Gemini Pro, and custom bots in one place.",
+    "description": "Poe provides multi-bot chat switching, custom bot creation, and multi-model comparison across leading proprietary and open-source models.",
+    "releaseYear": "2023-2026",
+    "contextWindow": "Multi-Model Context",
+    "openSource": false,
+    "pricing": "Free Tier / Subscription",
+    "modalities": [
+      "Text",
+      "Multi-Bot",
+      "Image",
+      "Code"
+    ],
+    "metrics": {
+      "reasoning": 92,
+      "speed": 94,
+      "costEfficiency": 90,
+      "coding": 88
+    },
+    "useCases": [
+      "Switching between top AI models in a single chat interface",
+      "Creating and sharing custom prompt bots and knowledge bases",
+      "Comparing responses from different LLMs side by side"
+    ],
+    "website": "https://poe.com",
+    "trending": true
+  },
+  {
+    "id": "recraft-ai",
+    "name": "Recraft AI",
+    "category": "creative",
+    "provider": "Recraft",
+    "badge": "Vector & 3D Art",
+    "badgeType": "creative",
+    "tagline": "Professional design AI platform generating clean vector graphics, 3D illustrations, and brand assets in infinite resolution.",
+    "description": "Recraft produces editable SVG vector art, icons, and 3D illustrations with strict brand style palettes, making it a favorite for product designers and marketing teams.",
+    "releaseYear": "2023-2026",
+    "contextWindow": "Infinite Canvas & Style Guides",
+    "openSource": false,
+    "pricing": "Free Tier / Pro",
+    "modalities": [
+      "Vector SVG",
+      "Raster 3D",
+      "Icons",
+      "Brand Colors"
+    ],
+    "metrics": {
+      "reasoning": 89,
+      "speed": 92,
+      "costEfficiency": 94,
+      "coding": 65
+    },
+    "useCases": [
+      "Generating clean editable SVG vector icons and illustrations",
+      "Maintaining brand color and visual style consistency across assets",
+      "Exporting transparent assets for mobile apps and web design"
+    ],
+    "website": "https://www.recraft.ai",
+    "trending": true
+  },
+  {
+    "id": "hedra",
+    "name": "Hedra",
+    "category": "creative",
+    "provider": "Hedra",
+    "badge": "Expressive Video",
+    "badgeType": "creative",
+    "tagline": "Real-time expressive character video generation syncing human speech, emotion, and motion.",
+    "description": "Hedra's Character-1 model transforms audio recordings and character portraits into expressive talking-head video clips with nuanced facial emotion and head motion.",
+    "releaseYear": "2024-2026",
+    "contextWindow": "Full Character Audio",
+    "openSource": false,
+    "pricing": "Free Credits / Pro",
+    "modalities": [
+      "Audio to Video",
+      "Character Avatars",
+      "Facial Animation"
+    ],
+    "metrics": {
+      "reasoning": 87,
+      "speed": 90,
+      "costEfficiency": 89,
+      "coding": 56
+    },
+    "useCases": [
+      "Creating expressive animated characters from voice recordings",
+      "Interactive virtual podcasts and visual storytelling",
+      "Social video shorts with animated hosts"
+    ],
+    "website": "https://www.hedra.com",
     "trending": true
   }
 ];

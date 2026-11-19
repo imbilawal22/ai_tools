@@ -36,20 +36,41 @@ To securely manage your Gemini API key in GitHub:
 
 ---
 
+## 💻 Local Windows Automation (9:00 AM & 6:00 PM Daily)
+
+You can also run the automated research pipeline locally on your Windows machine:
+
+1. **Automatic Scheduling**:
+   Run PowerShell as Administrator and execute:
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File scripts/setup_daily_schedule.ps1
+   ```
+   This registers two automated Windows Scheduled Tasks:
+   - `MindoraAI_Research_9AM`: Runs daily at 9:00 AM
+   - `MindoraAI_Research_6PM`: Runs daily at 6:00 PM
+
+2. **One-Click Manual Run**:
+   Double-click `scripts/run_daily_update.bat` to research, verify live URLs, and push newly discovered AI apps to the website immediately.
+
+---
+
 ## 📁 Repository Structure
 
 ```
 .
 ├── .github/
 │   └── workflows/
-│       └── update-ai-tools.yml   # Daily 9:00 AM & 6:00 PM PKT automation & deployment
+│       └── update-ai-tools.yml   # Daily 9:00 AM & 6:00 PM PKT GitHub Actions automation
 ├── scripts/
-│   └── fetch_ai_tools.py        # Gemini-powered global research probe & data merger
+│   ├── fetch_ai_tools.py        # Global research probe & live HTTPS URL validator
+│   ├── run_daily_update.bat     # Windows automated runner & git sync script
+│   ├── setup_daily_schedule.ps1 # Windows Task Scheduler auto-configurator (9 AM & 6 PM)
+│   └── add_verified_tools.py    # Direct dataset merger script
 ├── index.html                   # Responsive frontend interface
 ├── css/
 │   └── style.css                # Dark cybernetic theme & animations
 ├── js/
-│   ├── data.js                  # Dynamic AI tools registry
+│   ├── data.js                  # Dynamic AI tools registry (36+ live apps)
 │   └── script.js                # Neural canvas, live filtering, comparison & inspector
 ├── README.md                    # Documentation
 └── .gitignore                   # Ignored files
